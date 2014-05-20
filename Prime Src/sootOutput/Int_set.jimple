@@ -1,0 +1,37 @@
+class Int_set extends java.lang.Object
+{
+    private int val;
+
+    public void <init>(int)
+    {
+        Int_set this;
+        int val;
+
+        this := @this: Int_set;
+        val := @parameter0: int;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        this.<Int_set: int val> = val;
+        return;
+    }
+
+    void set(int)
+    {
+        Int_set this;
+        int s;
+
+        this := @this: Int_set;
+        s := @parameter0: int;
+        this.<Int_set: int val> = s;
+        return;
+    }
+
+    int get()
+    {
+        Int_set this;
+        int temp$0;
+
+        this := @this: Int_set;
+        temp$0 = this.<Int_set: int val>;
+        return temp$0;
+    }
+}

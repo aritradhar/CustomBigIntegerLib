@@ -1,0 +1,1238 @@
+public class squareMultipley extends java.lang.Object
+{
+    private static final java.util.Random rnd;
+
+    static void <clinit>()
+    {
+        java.util.Random temp$0;
+
+        temp$0 = new java.util.Random;
+        specialinvoke temp$0.<java.util.Random: void <init>()>();
+        <squareMultipley: java.util.Random rnd> = temp$0;
+        return;
+    }
+
+    public static boolean evenORodd(java.math.BigInteger)
+    {
+        java.math.BigInteger a, two, temp$0, one, temp$1, temp$2;
+        boolean temp$3, temp$4, temp$5;
+
+        a := @parameter0: java.math.BigInteger;
+        temp$0 = new java.math.BigInteger;
+        specialinvoke temp$0.<java.math.BigInteger: void <init>(java.lang.String)>("2");
+        two = temp$0;
+        temp$1 = new java.math.BigInteger;
+        specialinvoke temp$1.<java.math.BigInteger: void <init>(java.lang.String)>("1");
+        one = temp$1;
+        temp$2 = virtualinvoke a.<java.math.BigInteger: java.math.BigInteger remainder(java.math.BigInteger)>(two);
+        temp$3 = virtualinvoke temp$2.<java.math.BigInteger: boolean equals(java.lang.Object)>(one);
+        if temp$3 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$4 = 0;
+        return temp$4;
+
+     label1:
+        nop;
+        temp$5 = 1;
+        return temp$5;
+    }
+
+    public static java.math.BigInteger sqandmultiply(java.math.BigInteger, java.math.BigInteger, java.math.BigInteger)
+    {
+        java.math.BigInteger radix, exp, mod, check, two, temp$0, one, temp$1, temp$6, temp$7, temp$18, temp$23, temp$30, temp$34, temp$35, temp$36, temp$42, temp$43, temp$44, temp$49;
+        int x, i, temp$4, temp$8, temp$9, temp$11, temp$12, temp$13, count, temp$14, temp$16, temp$17, temp$19, temp$20, temp$22, temp$26, temp$28, temp$29, temp$32, temp$33, temp$38, temp$40, temp$41, temp$45, temp$46, temp$48;
+        java.math.BigInteger[] col, temp$3, temp$10, col2, temp$15, temp$21, temp$25, temp$27, temp$31, temp$37, temp$39, temp$47;
+        boolean temp$2, temp$5, temp$24;
+
+        radix := @parameter0: java.math.BigInteger;
+        exp := @parameter1: java.math.BigInteger;
+        mod := @parameter2: java.math.BigInteger;
+        x = 10000;
+        col = newarray (java.math.BigInteger)[x];
+        check = exp;
+        temp$0 = new java.math.BigInteger;
+        specialinvoke temp$0.<java.math.BigInteger: void <init>(java.lang.String)>("2");
+        two = temp$0;
+        temp$1 = new java.math.BigInteger;
+        specialinvoke temp$1.<java.math.BigInteger: void <init>(java.lang.String)>("1");
+        one = temp$1;
+        i = 0;
+
+     label0:
+        nop;
+        temp$2 = virtualinvoke check.<java.math.BigInteger: boolean equals(java.lang.Object)>(one);
+        if temp$2 == 0 goto label1;
+
+        goto label5;
+
+     label1:
+        nop;
+        temp$3 = col;
+        temp$4 = i;
+        temp$3[temp$4] = check;
+        temp$5 = staticinvoke <squareMultipley: boolean evenORodd(java.math.BigInteger)>(check);
+        if temp$5 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$6 = virtualinvoke check.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(one);
+        check = temp$6;
+        goto label4;
+
+     label3:
+        nop;
+        temp$7 = virtualinvoke check.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(two);
+        check = temp$7;
+
+     label4:
+        nop;
+        temp$8 = i;
+        temp$9 = temp$8 + 1;
+        i = temp$9;
+        goto label0;
+
+     label5:
+        nop;
+        temp$10 = col;
+        temp$11 = i;
+        temp$12 = temp$11 + 1;
+        i = temp$12;
+        temp$13 = temp$11;
+        temp$10[temp$13] = one;
+        col2 = newarray (java.math.BigInteger)[i];
+        temp$14 = i - 1;
+        count = temp$14;
+        temp$15 = col2;
+        temp$16 = i - 1;
+        temp$17 = temp$16;
+        temp$18 = virtualinvoke radix.<java.math.BigInteger: java.math.BigInteger mod(java.math.BigInteger)>(mod);
+        temp$15[temp$17] = temp$18;
+        temp$19 = count;
+        temp$20 = temp$19 + -1;
+        count = temp$20;
+
+     label6:
+        nop;
+        if count != -1 goto label7;
+
+        goto label11;
+
+     label7:
+        nop;
+        temp$21 = col;
+        temp$22 = count;
+        temp$23 = temp$21[temp$22];
+        temp$24 = staticinvoke <squareMultipley: boolean evenORodd(java.math.BigInteger)>(temp$23);
+        if temp$24 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$25 = col2;
+        temp$26 = count;
+        temp$27 = col2;
+        temp$28 = count;
+        temp$29 = temp$28 + 1;
+        temp$30 = temp$27[temp$29];
+        temp$31 = col2;
+        temp$32 = count;
+        temp$33 = temp$32 + 1;
+        temp$34 = temp$31[temp$33];
+        temp$35 = virtualinvoke temp$30.<java.math.BigInteger: java.math.BigInteger multiply(java.math.BigInteger)>(temp$34);
+        temp$36 = virtualinvoke temp$35.<java.math.BigInteger: java.math.BigInteger mod(java.math.BigInteger)>(mod);
+        temp$25[temp$26] = temp$36;
+        goto label10;
+
+     label9:
+        nop;
+        temp$37 = col2;
+        temp$38 = count;
+        temp$39 = col2;
+        temp$40 = count;
+        temp$41 = temp$40 + 1;
+        temp$42 = temp$39[temp$41];
+        temp$43 = virtualinvoke temp$42.<java.math.BigInteger: java.math.BigInteger multiply(java.math.BigInteger)>(radix);
+        temp$44 = virtualinvoke temp$43.<java.math.BigInteger: java.math.BigInteger mod(java.math.BigInteger)>(mod);
+        temp$37[temp$38] = temp$44;
+
+     label10:
+        nop;
+        temp$45 = count;
+        temp$46 = temp$45 + -1;
+        count = temp$46;
+        goto label6;
+
+     label11:
+        nop;
+        temp$47 = col2;
+        temp$48 = 0;
+        temp$49 = temp$47[temp$48];
+        return temp$49;
+    }
+
+    public static java.math.BigInteger gcd(java.math.BigInteger, java.math.BigInteger)
+    {
+        java.math.BigInteger a, b, one, temp$0, zero, temp$1, gcd, temp$9, temp$10;
+        boolean temp$2, temp$3, temp$4, temp$5, temp$6, temp$7;
+        int temp$8;
+
+        a := @parameter0: java.math.BigInteger;
+        b := @parameter1: java.math.BigInteger;
+        temp$0 = new java.math.BigInteger;
+        specialinvoke temp$0.<java.math.BigInteger: void <init>(java.lang.String)>("1");
+        one = temp$0;
+        temp$1 = new java.math.BigInteger;
+        specialinvoke temp$1.<java.math.BigInteger: void <init>(java.lang.String)>("0");
+        zero = temp$1;
+        temp$2 = virtualinvoke a.<java.math.BigInteger: boolean equals(java.lang.Object)>(b);
+        if temp$2 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        gcd = a;
+        return gcd;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$3 = virtualinvoke a.<java.math.BigInteger: boolean equals(java.lang.Object)>(b);
+        if temp$3 == 0 goto label3;
+
+        goto label15;
+
+     label3:
+        nop;
+        temp$4 = virtualinvoke a.<java.math.BigInteger: boolean equals(java.lang.Object)>(one);
+        if temp$4 == 0 goto label5;
+
+        goto label4;
+
+     label4:
+        nop;
+        gcd = a;
+        return gcd;
+
+     label5:
+        nop;
+        temp$5 = virtualinvoke b.<java.math.BigInteger: boolean equals(java.lang.Object)>(one);
+        if temp$5 == 0 goto label7;
+
+        goto label6;
+
+     label6:
+        nop;
+        gcd = b;
+        return gcd;
+
+     label7:
+        nop;
+        temp$6 = virtualinvoke a.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$6 == 0 goto label9;
+
+        goto label8;
+
+     label8:
+        nop;
+        gcd = b;
+        return gcd;
+
+     label9:
+        nop;
+        temp$7 = virtualinvoke b.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$7 == 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        gcd = a;
+        return gcd;
+
+     label11:
+        nop;
+        temp$8 = virtualinvoke a.<java.math.BigInteger: int compareTo(java.math.BigInteger)>(b);
+        if temp$8 > 0 goto label12;
+
+        goto label13;
+
+     label12:
+        nop;
+        temp$9 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(a, b);
+        a = temp$9;
+        goto label14;
+
+     label13:
+        nop;
+        temp$10 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(b, a);
+        b = temp$10;
+
+     label14:
+        nop;
+        goto label2;
+
+     label15:
+        nop;
+        gcd = a;
+        return gcd;
+    }
+
+    public static java.math.BigInteger gcd_Euc(java.math.BigInteger, java.math.BigInteger)
+    {
+        java.math.BigInteger a1, b1, zero, temp$0, one, temp$1, temp, a, b, q, r, temp$6, temp$8, temp$9;
+        boolean temp$2, temp$4, temp$5, temp$7;
+        int temp$3;
+
+        a1 := @parameter0: java.math.BigInteger;
+        b1 := @parameter1: java.math.BigInteger;
+        temp$0 = new java.math.BigInteger;
+        specialinvoke temp$0.<java.math.BigInteger: void <init>(java.lang.String)>("0");
+        zero = temp$0;
+        temp$1 = new java.math.BigInteger;
+        specialinvoke temp$1.<java.math.BigInteger: void <init>(java.lang.String)>("1");
+        one = temp$1;
+        a = a1;
+        b = b1;
+        temp$2 = virtualinvoke a.<java.math.BigInteger: boolean equals(java.lang.Object)>(b);
+        if temp$2 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        return a;
+
+     label1:
+        nop;
+        temp$3 = virtualinvoke a.<java.math.BigInteger: int compareTo(java.math.BigInteger)>(b);
+        if temp$3 < 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp = a;
+        a = b;
+        b = temp;
+
+     label3:
+        nop;
+        temp$4 = virtualinvoke a.<java.math.BigInteger: boolean equals(java.lang.Object)>(one);
+        if temp$4 == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$5 = virtualinvoke b.<java.math.BigInteger: boolean equals(java.lang.Object)>(one);
+        if temp$5 == 0 goto label6;
+
+        goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        return one;
+
+     label6:
+        nop;
+        r = null;
+
+     label7:
+        nop;
+        temp$6 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(a, b);
+        temp$7 = virtualinvoke temp$6.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$7 == 0 goto label8;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$8 = virtualinvoke a.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(b);
+        q = temp$8;
+        temp$9 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(a, b);
+        r = temp$9;
+        a = b;
+        b = r;
+        goto label7;
+
+     label9:
+        nop;
+        return r;
+    }
+
+    public static java.math.BigInteger mod(java.math.BigInteger, java.math.BigInteger)
+    {
+        java.math.BigInteger a, b, in, res, temp$1, temp$2, temp$3;
+        int temp$0;
+
+        a := @parameter0: java.math.BigInteger;
+        b := @parameter1: java.math.BigInteger;
+        temp$0 = virtualinvoke a.<java.math.BigInteger: int compareTo(java.math.BigInteger)>(b);
+        if temp$0 < 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return a;
+
+     label1:
+        nop;
+        temp$1 = virtualinvoke a.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(b);
+        in = temp$1;
+        temp$2 = virtualinvoke in.<java.math.BigInteger: java.math.BigInteger multiply(java.math.BigInteger)>(b);
+        temp$3 = virtualinvoke a.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(temp$2);
+        res = temp$3;
+        return res;
+    }
+
+    public static java.math.BigInteger true_mod(java.math.BigInteger, java.math.BigInteger)
+    {
+        java.math.BigInteger a, b, temp, temp$2;
+        int temp$0, temp$1;
+
+        a := @parameter0: java.math.BigInteger;
+        b := @parameter1: java.math.BigInteger;
+        temp$0 = virtualinvoke a.<java.math.BigInteger: int compareTo(java.math.BigInteger)>(b);
+        if temp$0 < 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        return a;
+
+     label1:
+        nop;
+        temp = a;
+
+     label2:
+        nop;
+        goto label3;
+
+     label3:
+        nop;
+        temp$1 = virtualinvoke temp.<java.math.BigInteger: int compareTo(java.math.BigInteger)>(b);
+        if temp$1 <= 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        goto label6;
+
+     label5:
+        nop;
+        temp$2 = virtualinvoke temp.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(b);
+        temp = temp$2;
+        goto label2;
+
+     label6:
+        nop;
+        return temp;
+    }
+
+    public static boolean miller_rabin_pass(java.math.BigInteger, java.math.BigInteger)
+    {
+        java.math.BigInteger a, n, zero, temp$0, one, temp$1, two, temp$2, n_inv, temp$3, d, a_to_power, temp$5, temp$9, temp$15, temp$16;
+        int s, temp$4, i, temp$12, temp$17, temp$18;
+        boolean temp$6, temp$7, temp$8, temp$10, temp$11, temp$13, temp$14, temp$19, temp$20, temp$21;
+
+        a := @parameter0: java.math.BigInteger;
+        n := @parameter1: java.math.BigInteger;
+        temp$0 = new java.math.BigInteger;
+        specialinvoke temp$0.<java.math.BigInteger: void <init>(java.lang.String)>("0");
+        zero = temp$0;
+        temp$1 = new java.math.BigInteger;
+        specialinvoke temp$1.<java.math.BigInteger: void <init>(java.lang.String)>("1");
+        one = temp$1;
+        temp$2 = new java.math.BigInteger;
+        specialinvoke temp$2.<java.math.BigInteger: void <init>(java.lang.String)>("2");
+        two = temp$2;
+        temp$3 = virtualinvoke n.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(one);
+        n_inv = temp$3;
+        d = n_inv;
+        temp$4 = virtualinvoke d.<java.math.BigInteger: int getLowestSetBit()>();
+        s = temp$4;
+        temp$5 = staticinvoke <squareMultipley: java.math.BigInteger sqandmultiply(java.math.BigInteger,java.math.BigInteger,java.math.BigInteger)>(a, d, n);
+        a_to_power = temp$5;
+        temp$6 = virtualinvoke a_to_power.<java.math.BigInteger: boolean equals(java.lang.Object)>(one);
+        if temp$6 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$7 = 1;
+        return temp$7;
+
+     label1:
+        nop;
+        temp$8 = virtualinvoke a_to_power.<java.math.BigInteger: boolean equals(java.lang.Object)>(two);
+        if temp$8 == 0 goto label2;
+
+        goto label4;
+
+     label2:
+        nop;
+        temp$9 = virtualinvoke a_to_power.<java.math.BigInteger: java.math.BigInteger mod(java.math.BigInteger)>(two);
+        temp$10 = virtualinvoke temp$9.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$10 == 0 goto label4;
+
+        goto label3;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$11 = 0;
+        return temp$11;
+
+     label4:
+        nop;
+        i = 0;
+
+     label5:
+        nop;
+        temp$12 = s - 1;
+        if i < temp$12 goto label6;
+
+        goto label9;
+
+     label6:
+        nop;
+        temp$13 = virtualinvoke a_to_power.<java.math.BigInteger: boolean equals(java.lang.Object)>(n_inv);
+        if temp$13 == 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$14 = 1;
+        return temp$14;
+
+     label8:
+        nop;
+        temp$15 = virtualinvoke a_to_power.<java.math.BigInteger: java.math.BigInteger multiply(java.math.BigInteger)>(a_to_power);
+        temp$16 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(temp$15, n);
+        a_to_power = temp$16;
+        nop;
+        temp$17 = i;
+        temp$18 = temp$17 + 1;
+        i = temp$18;
+        goto label5;
+
+     label9:
+        nop;
+        temp$19 = virtualinvoke a_to_power.<java.math.BigInteger: boolean equals(java.lang.Object)>(n_inv);
+        if temp$19 == 0 goto label11;
+
+        goto label10;
+
+     label10:
+        nop;
+        temp$20 = 1;
+        return temp$20;
+
+     label11:
+        nop;
+        temp$21 = 0;
+        return temp$21;
+    }
+
+    public static boolean miller_rabin(java.math.BigInteger, int)
+    {
+        java.math.BigInteger n, zero, temp$0, one, temp$1, a, temp$2, temp$6;
+        int try_t, i, temp$3, temp$7, temp$11, temp$12;
+        java.util.Random temp$4;
+        boolean temp$5, temp$8, temp$9, temp$10, temp$13;
+
+        n := @parameter0: java.math.BigInteger;
+        try_t := @parameter1: int;
+        temp$0 = new java.math.BigInteger;
+        specialinvoke temp$0.<java.math.BigInteger: void <init>(java.lang.String)>("0");
+        zero = temp$0;
+        temp$1 = new java.math.BigInteger;
+        specialinvoke temp$1.<java.math.BigInteger: void <init>(java.lang.String)>("1");
+        one = temp$1;
+        i = 0;
+
+     label0:
+        nop;
+        if i < try_t goto label1;
+
+        goto label8;
+
+     label1:
+        nop;
+
+     label2:
+        nop;
+        temp$2 = new java.math.BigInteger;
+        temp$3 = virtualinvoke n.<java.math.BigInteger: int bitLength()>();
+        temp$4 = <squareMultipley: java.util.Random rnd>;
+        specialinvoke temp$2.<java.math.BigInteger: void <init>(int,java.util.Random)>(temp$3, temp$4);
+        a = temp$2;
+        nop;
+        temp$5 = virtualinvoke a.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$5 == 0 goto label3;
+
+        goto label2;
+
+     label3:
+        nop;
+        temp$6 = staticinvoke <squareMultipley: java.math.BigInteger gcd_Euc(java.math.BigInteger,java.math.BigInteger)>(a, n);
+        temp$7 = virtualinvoke temp$6.<java.math.BigInteger: int compareTo(java.math.BigInteger)>(one);
+        if temp$7 > 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$8 = 0;
+        return temp$8;
+
+     label5:
+        nop;
+        temp$9 = staticinvoke <squareMultipley: boolean miller_rabin_pass(java.math.BigInteger,java.math.BigInteger)>(a, n);
+        if temp$9 == 0 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$10 = 0;
+        return temp$10;
+
+     label7:
+        nop;
+        nop;
+        temp$11 = i;
+        temp$12 = temp$11 + 1;
+        i = temp$12;
+        goto label0;
+
+     label8:
+        nop;
+        temp$13 = 1;
+        return temp$13;
+    }
+
+    public static boolean Solovay_Strassen(java.math.BigInteger, int)
+    {
+        java.math.BigInteger n, one, temp$0, two, temp$1, a, temp$2, temp$5, temp, temp$7, temp$12, temp$13, temp$14;
+        int try_t, i, temp$3, temp$6, temp$9, temp$18, temp$19;
+        java.util.Random temp$4;
+        java.lang.Integer x;
+        java.lang.String temp$8;
+        java.io.PrintStream temp$10, temp$16;
+        boolean temp$11, temp$15, temp$17, temp$20;
+
+        n := @parameter0: java.math.BigInteger;
+        try_t := @parameter1: int;
+        temp$0 = new java.math.BigInteger;
+        specialinvoke temp$0.<java.math.BigInteger: void <init>(java.lang.String)>("1");
+        one = temp$0;
+        temp$1 = new java.math.BigInteger;
+        specialinvoke temp$1.<java.math.BigInteger: void <init>(java.lang.String)>("2");
+        two = temp$1;
+        i = 0;
+
+     label0:
+        nop;
+        if i < try_t goto label1;
+
+        goto label6;
+
+     label1:
+        nop;
+        temp$2 = new java.math.BigInteger;
+        temp$3 = virtualinvoke n.<java.math.BigInteger: int bitLength()>();
+        temp$4 = <squareMultipley: java.util.Random rnd>;
+        specialinvoke temp$2.<java.math.BigInteger: void <init>(int,java.util.Random)>(temp$3, temp$4);
+        a = temp$2;
+        temp$5 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(a, n);
+        a = temp$5;
+        temp$6 = staticinvoke <squareMultipley: int Legendre_symbol(java.math.BigInteger,java.math.BigInteger)>(a, n);
+        x = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$6);
+        temp$7 = new java.math.BigInteger;
+        temp$8 = virtualinvoke x.<java.lang.Integer: java.lang.String toString()>();
+        specialinvoke temp$7.<java.math.BigInteger: void <init>(java.lang.String)>(temp$8);
+        temp = temp$7;
+        temp$9 = virtualinvoke x.<java.lang.Integer: int intValue()>();
+        if temp$9 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$10 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke temp$10.<java.io.PrintStream: void println(java.lang.String)>("in1");
+        temp$11 = 0;
+        return temp$11;
+
+     label3:
+        nop;
+        temp$12 = virtualinvoke n.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(one);
+        temp$13 = virtualinvoke temp$12.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(two);
+        temp$14 = staticinvoke <squareMultipley: java.math.BigInteger sqandmultiply(java.math.BigInteger,java.math.BigInteger,java.math.BigInteger)>(a, temp$13, n);
+        temp$15 = virtualinvoke temp$14.<java.math.BigInteger: boolean equals(java.lang.Object)>(temp);
+        if temp$15 == 0 goto label4;
+
+        goto label5;
+
+     label4:
+        nop;
+        temp$16 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke temp$16.<java.io.PrintStream: void println(java.lang.String)>("in2");
+        temp$17 = 0;
+        return temp$17;
+
+     label5:
+        nop;
+        nop;
+        temp$18 = i;
+        temp$19 = temp$18 + 1;
+        i = temp$19;
+        goto label0;
+
+     label6:
+        nop;
+        temp$20 = 1;
+        return temp$20;
+    }
+
+    public static boolean Solovoy(java.math.BigInteger, int)
+    {
+        java.math.BigInteger p, zero, temp$0, one, temp$1, two, temp$2, temp$6, a, temp$9, temp$12, temp$13, jac, temp$15, jacobian, temp$17, temp$18, mod, temp$19, temp$20, temp$21;
+        int iteration, temp$3, i, temp$10, temp$14, temp$25, temp$26;
+        boolean temp$4, temp$5, temp$7, temp$8, temp$22, temp$23, temp$24, temp$27;
+        java.util.Random temp$11;
+        java.lang.Integer jac_i;
+        java.lang.String temp$16;
+
+        p := @parameter0: java.math.BigInteger;
+        iteration := @parameter1: int;
+        temp$0 = new java.math.BigInteger;
+        specialinvoke temp$0.<java.math.BigInteger: void <init>(java.lang.String)>("0");
+        zero = temp$0;
+        temp$1 = new java.math.BigInteger;
+        specialinvoke temp$1.<java.math.BigInteger: void <init>(java.lang.String)>("1");
+        one = temp$1;
+        temp$2 = new java.math.BigInteger;
+        specialinvoke temp$2.<java.math.BigInteger: void <init>(java.lang.String)>("2");
+        two = temp$2;
+        temp$3 = virtualinvoke p.<java.math.BigInteger: int compareTo(java.math.BigInteger)>(two);
+        if temp$3 < 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$4 = 0;
+        return temp$4;
+
+     label1:
+        nop;
+        temp$5 = virtualinvoke p.<java.math.BigInteger: boolean equals(java.lang.Object)>(two);
+        if temp$5 == 0 goto label2;
+
+        goto label4;
+
+     label2:
+        nop;
+        temp$6 = virtualinvoke p.<java.math.BigInteger: java.math.BigInteger mod(java.math.BigInteger)>(two);
+        temp$7 = virtualinvoke temp$6.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$7 == 0 goto label4;
+
+        goto label3;
+
+        goto label3;
+
+     label3:
+        nop;
+        temp$8 = 0;
+        return temp$8;
+
+     label4:
+        nop;
+        i = 0;
+
+     label5:
+        nop;
+        if i < iteration goto label6;
+
+        goto label10;
+
+     label6:
+        nop;
+        temp$9 = new java.math.BigInteger;
+        temp$10 = virtualinvoke p.<java.math.BigInteger: int bitLength()>();
+        temp$11 = <squareMultipley: java.util.Random rnd>;
+        specialinvoke temp$9.<java.math.BigInteger: void <init>(int,java.util.Random)>(temp$10, temp$11);
+        temp$12 = virtualinvoke p.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(one);
+        temp$13 = virtualinvoke temp$9.<java.math.BigInteger: java.math.BigInteger mod(java.math.BigInteger)>(temp$12);
+        a = temp$13;
+        temp$14 = staticinvoke <squareMultipley: int Jacobian(java.math.BigInteger,java.math.BigInteger)>(a, p);
+        jac_i = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$14);
+        temp$15 = new java.math.BigInteger;
+        temp$16 = virtualinvoke jac_i.<java.lang.Integer: java.lang.String toString()>();
+        specialinvoke temp$15.<java.math.BigInteger: void <init>(java.lang.String)>(temp$16);
+        jac = temp$15;
+        temp$17 = virtualinvoke p.<java.math.BigInteger: java.math.BigInteger add(java.math.BigInteger)>(jac);
+        temp$18 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(temp$17, p);
+        jacobian = temp$18;
+        temp$19 = virtualinvoke p.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(one);
+        temp$20 = virtualinvoke temp$19.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(two);
+        temp$21 = staticinvoke <squareMultipley: java.math.BigInteger sqandmultiply(java.math.BigInteger,java.math.BigInteger,java.math.BigInteger)>(a, temp$20, p);
+        mod = temp$21;
+        temp$22 = virtualinvoke jacobian.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$22 == 0 goto label8;
+
+        goto label7;
+
+     label7:
+        nop;
+        temp$23 = virtualinvoke mod.<java.math.BigInteger: boolean equals(java.lang.Object)>(jacobian);
+        if temp$23 == 0 goto label8;
+
+        goto label9;
+
+        goto label9;
+
+     label8:
+        nop;
+        temp$24 = 0;
+        return temp$24;
+
+     label9:
+        nop;
+        nop;
+        temp$25 = i;
+        temp$26 = temp$25 + 1;
+        i = temp$26;
+        goto label5;
+
+     label10:
+        nop;
+        temp$27 = 1;
+        return temp$27;
+    }
+
+    public static int Jacobian(java.math.BigInteger, java.math.BigInteger)
+    {
+        java.math.BigInteger a, n, zero, temp$0, one, temp$1, two, temp$2, temp$8, temp$9, temp$10, temp$11, temp$12, temp$15, temp$17, temp$18, temp$19, temp$20, temp$22, temp$23, temp$24, temp, temp$27, temp$28, temp$29, temp$31, temp$32, temp$33, temp$36, temp$37, temp$39;
+        int flag, temp$4, temp$6, temp$7, temp$14, temp$26, temp$35, temp$38, temp$41;
+        boolean temp$3, temp$5, temp$13, temp$16, temp$21, temp$25, temp$30, temp$34, temp$40;
+
+        a := @parameter0: java.math.BigInteger;
+        n := @parameter1: java.math.BigInteger;
+        temp$0 = new java.math.BigInteger;
+        specialinvoke temp$0.<java.math.BigInteger: void <init>(java.lang.String)>("0");
+        zero = temp$0;
+        temp$1 = new java.math.BigInteger;
+        specialinvoke temp$1.<java.math.BigInteger: void <init>(java.lang.String)>("1");
+        one = temp$1;
+        temp$2 = new java.math.BigInteger;
+        specialinvoke temp$2.<java.math.BigInteger: void <init>(java.lang.String)>("2");
+        two = temp$2;
+        flag = 1;
+        temp$3 = virtualinvoke a.<java.math.BigInteger: boolean equals(java.lang.Object)>(one);
+        if temp$3 == 0 goto label1;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$4 = 1;
+        flag = temp$4;
+
+     label1:
+        nop;
+        temp$5 = virtualinvoke a.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$5 == 0 goto label3;
+
+        goto label2;
+
+     label2:
+        nop;
+        temp$6 = 0;
+        flag = temp$6;
+
+     label3:
+        nop;
+        temp$7 = virtualinvoke a.<java.math.BigInteger: int compareTo(java.math.BigInteger)>(zero);
+        if temp$7 < 0 goto label4;
+
+        goto label18;
+
+     label4:
+        nop;
+        temp$8 = new java.math.BigInteger;
+        specialinvoke temp$8.<java.math.BigInteger: void <init>(java.lang.String)>("-1");
+        temp$9 = virtualinvoke a.<java.math.BigInteger: java.math.BigInteger multiply(java.math.BigInteger)>(temp$8);
+        a = temp$9;
+        temp$10 = new java.math.BigInteger;
+        specialinvoke temp$10.<java.math.BigInteger: void <init>(java.lang.String)>("4");
+        temp$11 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(n, temp$10);
+        temp$12 = new java.math.BigInteger;
+        specialinvoke temp$12.<java.math.BigInteger: void <init>(java.lang.String)>("3");
+        temp$13 = virtualinvoke temp$11.<java.math.BigInteger: boolean equals(java.lang.Object)>(temp$12);
+        if temp$13 == 0 goto label6;
+
+        goto label5;
+
+     label5:
+        nop;
+        temp$14 = -1;
+        flag = temp$14;
+
+     label6:
+        nop;
+
+     label7:
+        nop;
+        temp$15 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(a, two);
+        temp$16 = virtualinvoke temp$15.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$16 == 0 goto label12;
+
+        goto label8;
+
+     label8:
+        nop;
+        temp$17 = virtualinvoke a.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(two);
+        a = temp$17;
+        temp$18 = new java.math.BigInteger;
+        specialinvoke temp$18.<java.math.BigInteger: void <init>(java.lang.String)>("8");
+        temp$19 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(n, temp$18);
+        temp$20 = new java.math.BigInteger;
+        specialinvoke temp$20.<java.math.BigInteger: void <init>(java.lang.String)>("3");
+        temp$21 = virtualinvoke temp$19.<java.math.BigInteger: boolean equals(java.lang.Object)>(temp$20);
+        if temp$21 == 0 goto label9;
+
+        goto label10;
+
+     label9:
+        nop;
+        temp$22 = new java.math.BigInteger;
+        specialinvoke temp$22.<java.math.BigInteger: void <init>(java.lang.String)>("8");
+        temp$23 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(n, temp$22);
+        temp$24 = new java.math.BigInteger;
+        specialinvoke temp$24.<java.math.BigInteger: void <init>(java.lang.String)>("5");
+        temp$25 = virtualinvoke temp$23.<java.math.BigInteger: boolean equals(java.lang.Object)>(temp$24);
+        if temp$25 == 0 goto label11;
+
+        goto label10;
+
+        goto label11;
+
+     label10:
+        nop;
+        temp$26 = neg flag;
+        flag = temp$26;
+
+     label11:
+        nop;
+        goto label7;
+
+     label12:
+        nop;
+        temp = a;
+        a = n;
+        n = temp;
+        temp$27 = new java.math.BigInteger;
+        specialinvoke temp$27.<java.math.BigInteger: void <init>(java.lang.String)>("4");
+        temp$28 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(a, temp$27);
+        temp$29 = new java.math.BigInteger;
+        specialinvoke temp$29.<java.math.BigInteger: void <init>(java.lang.String)>("3");
+        temp$30 = virtualinvoke temp$28.<java.math.BigInteger: boolean equals(java.lang.Object)>(temp$29);
+        if temp$30 == 0 goto label15;
+
+        goto label13;
+
+     label13:
+        nop;
+        temp$31 = new java.math.BigInteger;
+        specialinvoke temp$31.<java.math.BigInteger: void <init>(java.lang.String)>("4");
+        temp$32 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(n, temp$31);
+        temp$33 = new java.math.BigInteger;
+        specialinvoke temp$33.<java.math.BigInteger: void <init>(java.lang.String)>("3");
+        temp$34 = virtualinvoke temp$32.<java.math.BigInteger: boolean equals(java.lang.Object)>(temp$33);
+        if temp$34 == 0 goto label15;
+
+        goto label14;
+
+        goto label14;
+
+     label14:
+        nop;
+        temp$35 = neg flag;
+        flag = temp$35;
+
+     label15:
+        nop;
+        temp$36 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(a, n);
+        a = temp$36;
+        temp$37 = virtualinvoke n.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(two);
+        temp$38 = virtualinvoke a.<java.math.BigInteger: int compareTo(java.math.BigInteger)>(temp$37);
+        if temp$38 > 0 goto label16;
+
+        goto label17;
+
+     label16:
+        nop;
+        temp$39 = virtualinvoke a.<java.math.BigInteger: java.math.BigInteger subtract(java.math.BigInteger)>(n);
+        a = temp$39;
+
+     label17:
+        nop;
+
+     label18:
+        nop;
+        temp$40 = virtualinvoke n.<java.math.BigInteger: boolean equals(java.lang.Object)>(one);
+        if temp$40 == 0 goto label20;
+
+        goto label19;
+
+     label19:
+        nop;
+        return flag;
+
+     label20:
+        nop;
+        temp$41 = 0;
+        return temp$41;
+    }
+
+    public static int Legendre_symbol(java.math.BigInteger, java.math.BigInteger)
+    {
+        java.math.BigInteger a, p, x, temp$0, zero, temp$1, root, temp$2, temp$4, temp$8;
+        boolean temp$3, temp$6;
+        int temp$5, temp$7, temp$9, temp$10;
+
+        a := @parameter0: java.math.BigInteger;
+        p := @parameter1: java.math.BigInteger;
+        temp$0 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(a, p);
+        x = temp$0;
+        temp$1 = new java.math.BigInteger;
+        specialinvoke temp$1.<java.math.BigInteger: void <init>(java.lang.String)>("0");
+        zero = temp$1;
+        temp$2 = staticinvoke <squareMultipley: java.math.BigInteger sqrt(java.math.BigInteger)>(x);
+        root = temp$2;
+        temp$3 = staticinvoke <squareMultipley: boolean isSqrt(java.math.BigInteger,java.math.BigInteger)>(x, root);
+        if temp$3 == 0 goto label2;
+
+        goto label0;
+
+     label0:
+        nop;
+        temp$4 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(a, p);
+        if temp$4 != zero goto label1;
+
+        goto label2;
+
+        goto label1;
+
+     label1:
+        nop;
+        temp$5 = 1;
+        return temp$5;
+
+     label2:
+        nop;
+        temp$6 = staticinvoke <squareMultipley: boolean isSqrt(java.math.BigInteger,java.math.BigInteger)>(x, root);
+        if temp$6 == 0 goto label3;
+
+        goto label4;
+
+     label3:
+        nop;
+        temp$7 = -1;
+        return temp$7;
+
+     label4:
+        nop;
+        temp$8 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(a, p);
+        if temp$8 == zero goto label5;
+
+        goto label6;
+
+     label5:
+        nop;
+        temp$9 = 0;
+        return temp$9;
+
+     label6:
+        nop;
+        temp$10 = 2;
+        return temp$10;
+    }
+
+    public static java.math.BigInteger sqrt(java.math.BigInteger)
+    {
+        java.math.BigInteger n, two, temp$0, root, temp$3, temp$5, temp$7, temp$8, temp$9;
+        int temp$1, bitLength, temp$2, temp$4;
+        boolean temp$6;
+        java.lang.ArithmeticException temp$10;
+
+        n := @parameter0: java.math.BigInteger;
+        temp$0 = new java.math.BigInteger;
+        specialinvoke temp$0.<java.math.BigInteger: void <init>(java.lang.String)>("2");
+        two = temp$0;
+        temp$1 = virtualinvoke n.<java.math.BigInteger: int signum()>();
+        if temp$1 >= 0 goto label0;
+
+        goto label4;
+
+     label0:
+        nop;
+        temp$2 = virtualinvoke n.<java.math.BigInteger: int bitLength()>();
+        bitLength = temp$2;
+        temp$3 = <java.math.BigInteger: java.math.BigInteger ONE>;
+        temp$4 = bitLength / 2;
+        temp$5 = virtualinvoke temp$3.<java.math.BigInteger: java.math.BigInteger shiftLeft(int)>(temp$4);
+        root = temp$5;
+
+     label1:
+        nop;
+        temp$6 = staticinvoke <squareMultipley: boolean isSqrt(java.math.BigInteger,java.math.BigInteger)>(n, root);
+        if temp$6 == 0 goto label2;
+
+        goto label3;
+
+     label2:
+        nop;
+        temp$7 = virtualinvoke n.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(root);
+        temp$8 = virtualinvoke root.<java.math.BigInteger: java.math.BigInteger add(java.math.BigInteger)>(temp$7);
+        temp$9 = virtualinvoke temp$8.<java.math.BigInteger: java.math.BigInteger divide(java.math.BigInteger)>(two);
+        root = temp$9;
+        goto label1;
+
+     label3:
+        nop;
+        return root;
+
+     label4:
+        nop;
+        temp$10 = new java.lang.ArithmeticException;
+        specialinvoke temp$10.<java.lang.ArithmeticException: void <init>(java.lang.String)>("square root of negative number");
+        throw temp$10;
+    }
+
+    private static final boolean isSqrt(java.math.BigInteger, java.math.BigInteger)
+    {
+        java.math.BigInteger n, root, lowerBound, temp$0, upperBound, temp$1, temp$2, temp$3;
+        int temp$4, temp$5;
+        boolean temp$6;
+
+        n := @parameter0: java.math.BigInteger;
+        root := @parameter1: java.math.BigInteger;
+        temp$0 = virtualinvoke root.<java.math.BigInteger: java.math.BigInteger pow(int)>(2);
+        lowerBound = temp$0;
+        temp$1 = <java.math.BigInteger: java.math.BigInteger ONE>;
+        temp$2 = virtualinvoke root.<java.math.BigInteger: java.math.BigInteger add(java.math.BigInteger)>(temp$1);
+        temp$3 = virtualinvoke temp$2.<java.math.BigInteger: java.math.BigInteger pow(int)>(2);
+        upperBound = temp$3;
+        temp$4 = virtualinvoke lowerBound.<java.math.BigInteger: int compareTo(java.math.BigInteger)>(n);
+        if temp$4 <= 0 goto label0;
+
+        goto label1;
+
+     label0:
+        nop;
+        temp$5 = virtualinvoke n.<java.math.BigInteger: int compareTo(java.math.BigInteger)>(upperBound);
+        if temp$5 < 0 goto label2;
+
+        goto label1;
+
+        goto label2;
+
+     label1:
+        nop;
+        temp$6 = 0;
+        goto label3;
+
+     label2:
+        nop;
+        temp$6 = 1;
+
+     label3:
+        nop;
+        return temp$6;
+    }
+
+    public static void main(java.lang.String[]) throws java.io.IOException, java.lang.InterruptedException
+    {
+        java.lang.String[] args;
+        long startTime, temp$0, stopTime, temp$6, elapsedTime, temp$7;
+        Int_set flag, temp$1;
+        MyThread mt1, temp$2, mt2, temp$3, mt3, temp$4, mt4, temp$5;
+        java.io.PrintStream temp$8;
+        java.lang.StringBuffer temp$9;
+        java.lang.String temp$10;
+
+        args := @parameter0: java.lang.String[];
+        temp$0 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        startTime = temp$0;
+        temp$1 = new Int_set;
+        specialinvoke temp$1.<Int_set: void <init>(int)>(0);
+        flag = temp$1;
+        temp$2 = new MyThread;
+        specialinvoke temp$2.<MyThread: void <init>(Int_set)>(flag);
+        mt1 = temp$2;
+        temp$3 = new MyThread;
+        specialinvoke temp$3.<MyThread: void <init>(Int_set)>(flag);
+        mt2 = temp$3;
+        temp$4 = new MyThread;
+        specialinvoke temp$4.<MyThread: void <init>(Int_set)>(flag);
+        mt3 = temp$4;
+        temp$5 = new MyThread;
+        specialinvoke temp$5.<MyThread: void <init>(Int_set)>(flag);
+        mt4 = temp$5;
+        virtualinvoke mt1.<MyThread: void setName(java.lang.String)>("mt1");
+        virtualinvoke mt2.<MyThread: void setName(java.lang.String)>("mt2");
+        virtualinvoke mt3.<MyThread: void setName(java.lang.String)>("mt3");
+        virtualinvoke mt4.<MyThread: void setName(java.lang.String)>("mt4");
+        virtualinvoke mt1.<MyThread: void start()>();
+        virtualinvoke mt2.<MyThread: void start()>();
+        virtualinvoke mt3.<MyThread: void start()>();
+        virtualinvoke mt4.<MyThread: void start()>();
+        virtualinvoke mt1.<MyThread: void join()>();
+        virtualinvoke mt2.<MyThread: void join()>();
+        virtualinvoke mt3.<MyThread: void join()>();
+        virtualinvoke mt4.<MyThread: void join()>();
+        temp$6 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+        stopTime = temp$6;
+        temp$7 = stopTime - startTime;
+        elapsedTime = temp$7;
+        temp$8 = <java.lang.System: java.io.PrintStream out>;
+        temp$9 = new java.lang.StringBuffer;
+        specialinvoke temp$9.<java.lang.StringBuffer: void <init>()>();
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(long)>(elapsedTime);
+        virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(" ms");
+        temp$10 = virtualinvoke temp$9.<java.lang.StringBuffer: java.lang.String toString()>();
+        virtualinvoke temp$8.<java.io.PrintStream: void println(java.lang.String)>(temp$10);
+        return;
+    }
+
+    public void <init>()
+    {
+        squareMultipley this;
+
+        this := @this: squareMultipley;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+}

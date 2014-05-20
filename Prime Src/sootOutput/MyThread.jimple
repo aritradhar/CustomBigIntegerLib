@@ -1,0 +1,293 @@
+class MyThread extends java.lang.Thread
+{
+    public static final java.util.Random rnd;
+    Int_set flag;
+    int bitlen;
+
+    static void <clinit>()
+    {
+        java.util.Random temp$0;
+
+        temp$0 = new java.util.Random;
+        specialinvoke temp$0.<java.util.Random: void <init>()>();
+        <MyThread: java.util.Random rnd> = temp$0;
+        return;
+    }
+
+    public void <init>(Int_set)
+    {
+        MyThread this;
+        Int_set flag;
+
+        this := @this: MyThread;
+        flag := @parameter0: Int_set;
+        specialinvoke this.<java.lang.Thread: void <init>()>();
+        this.<MyThread: Int_set flag> = flag;
+        return;
+    }
+
+    public void run()
+    {
+        MyThread this;
+        java.math.BigInteger zero, temp$0, one, temp$1, two, temp$2, three, temp$3, seven, temp$4, elvn, temp$5, p, temp$10, temp$15, temp$17, temp$19, temp$21, q, temp$24, temp$25, temp$28, temp$30, temp$32, temp$34;
+        java.lang.Integer bitlen;
+        int temp$6, temp$9, temp$11;
+        Int_set temp$7, temp$8, temp$37;
+        java.util.Random temp$12;
+        boolean temp$13, temp$14, temp$16, temp$18, temp$20, temp$22, temp$23, temp$26, temp$27, temp$29, temp$31, temp$33, temp$35, temp$36;
+        java.io.PrintStream temp$38, temp$40, temp$41;
+        java.lang.String temp$39;
+        java.lang.Throwable temp$42;
+
+        this := @this: MyThread;
+        temp$0 = new java.math.BigInteger;
+        specialinvoke temp$0.<java.math.BigInteger: void <init>(java.lang.String)>("0");
+        zero = temp$0;
+        temp$1 = new java.math.BigInteger;
+        specialinvoke temp$1.<java.math.BigInteger: void <init>(java.lang.String)>("1");
+        one = temp$1;
+        temp$2 = new java.math.BigInteger;
+        specialinvoke temp$2.<java.math.BigInteger: void <init>(java.lang.String)>("2");
+        two = temp$2;
+        temp$3 = new java.math.BigInteger;
+        specialinvoke temp$3.<java.math.BigInteger: void <init>(java.lang.String)>("3");
+        three = temp$3;
+        temp$4 = new java.math.BigInteger;
+        specialinvoke temp$4.<java.math.BigInteger: void <init>(java.lang.String)>("7");
+        seven = temp$4;
+        temp$5 = new java.math.BigInteger;
+        specialinvoke temp$5.<java.math.BigInteger: void <init>(java.lang.String)>("11");
+        elvn = temp$5;
+        temp$6 = 512;
+        bitlen = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(temp$6);
+        temp$7 = this.<MyThread: Int_set flag>;
+        entermonitor temp$7;
+
+     label0:
+        nop;
+        temp$8 = this.<MyThread: Int_set flag>;
+        temp$9 = virtualinvoke temp$8.<Int_set: int get()>();
+        if temp$9 == 1 goto label1;
+
+        goto label3;
+
+     label1:
+        nop;
+        exitmonitor temp$7;
+
+     label2:
+        nop;
+        return;
+
+     label3:
+        nop;
+
+     label4:
+        nop;
+        goto label5;
+
+     label5:
+        nop;
+        temp$10 = new java.math.BigInteger;
+        temp$11 = virtualinvoke bitlen.<java.lang.Integer: int intValue()>();
+        temp$12 = <MyThread: java.util.Random rnd>;
+        specialinvoke temp$10.<java.math.BigInteger: void <init>(int,java.util.Random)>(temp$11, temp$12);
+        p = temp$10;
+        temp$13 = virtualinvoke p.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$13 == 0 goto label6;
+
+        goto label7;
+
+     label6:
+        nop;
+        temp$14 = virtualinvoke p.<java.math.BigInteger: boolean equals(java.lang.Object)>(one);
+        if temp$14 == 0 goto label9;
+
+        goto label7;
+
+        goto label9;
+
+     label7:
+        nop;
+
+     label8:
+        nop;
+        goto label4;
+
+     label9:
+        nop;
+        temp$15 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(p, two);
+        temp$16 = virtualinvoke temp$15.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$16 == 0 goto label10;
+
+        goto label13;
+
+     label10:
+        nop;
+        temp$17 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(p, three);
+        temp$18 = virtualinvoke temp$17.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$18 == 0 goto label11;
+
+        goto label13;
+
+        goto label11;
+
+     label11:
+        nop;
+        temp$19 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(p, seven);
+        temp$20 = virtualinvoke temp$19.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$20 == 0 goto label12;
+
+        goto label13;
+
+        goto label12;
+
+     label12:
+        nop;
+        temp$21 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(p, elvn);
+        temp$22 = virtualinvoke temp$21.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$22 == 0 goto label15;
+
+        goto label13;
+
+        goto label15;
+
+     label13:
+        nop;
+
+     label14:
+        nop;
+        goto label4;
+
+     label15:
+        nop;
+        temp$23 = staticinvoke <squareMultipley: boolean miller_rabin(java.math.BigInteger,int)>(p, 5);
+        if temp$23 == 0 goto label30;
+
+        goto label16;
+
+     label16:
+        nop;
+        temp$24 = virtualinvoke p.<java.math.BigInteger: java.math.BigInteger multiply(java.math.BigInteger)>(two);
+        temp$25 = virtualinvoke temp$24.<java.math.BigInteger: java.math.BigInteger add(java.math.BigInteger)>(one);
+        q = temp$25;
+        temp$26 = virtualinvoke q.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$26 == 0 goto label17;
+
+        goto label18;
+
+     label17:
+        nop;
+        temp$27 = virtualinvoke q.<java.math.BigInteger: boolean equals(java.lang.Object)>(one);
+        if temp$27 == 0 goto label20;
+
+        goto label18;
+
+        goto label20;
+
+     label18:
+        nop;
+
+     label19:
+        nop;
+        goto label4;
+
+     label20:
+        nop;
+        temp$28 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(p, two);
+        temp$29 = virtualinvoke temp$28.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$29 == 0 goto label21;
+
+        goto label24;
+
+     label21:
+        nop;
+        temp$30 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(p, three);
+        temp$31 = virtualinvoke temp$30.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$31 == 0 goto label22;
+
+        goto label24;
+
+        goto label22;
+
+     label22:
+        nop;
+        temp$32 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(p, seven);
+        temp$33 = virtualinvoke temp$32.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$33 == 0 goto label23;
+
+        goto label24;
+
+        goto label23;
+
+     label23:
+        nop;
+        temp$34 = staticinvoke <squareMultipley: java.math.BigInteger mod(java.math.BigInteger,java.math.BigInteger)>(p, elvn);
+        temp$35 = virtualinvoke temp$34.<java.math.BigInteger: boolean equals(java.lang.Object)>(zero);
+        if temp$35 == 0 goto label26;
+
+        goto label24;
+
+        goto label26;
+
+     label24:
+        nop;
+
+     label25:
+        nop;
+        goto label4;
+
+     label26:
+        nop;
+        temp$36 = staticinvoke <squareMultipley: boolean miller_rabin(java.math.BigInteger,int)>(q, 5);
+        if temp$36 == 0 goto label29;
+
+        goto label27;
+
+     label27:
+        nop;
+        temp$37 = this.<MyThread: Int_set flag>;
+        virtualinvoke temp$37.<Int_set: void set(int)>(1);
+        temp$38 = <java.lang.System: java.io.PrintStream out>;
+        temp$39 = virtualinvoke this.<MyThread: java.lang.String getName()>();
+        virtualinvoke temp$38.<java.io.PrintStream: void println(java.lang.String)>(temp$39);
+        temp$40 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke temp$40.<java.io.PrintStream: void println(java.lang.Object)>(p);
+        temp$41 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke temp$41.<java.io.PrintStream: void println(java.lang.Object)>(q);
+
+     label28:
+        nop;
+        goto label31;
+
+     label29:
+        nop;
+
+     label30:
+        nop;
+        goto label4;
+
+     label31:
+        nop;
+        exitmonitor temp$7;
+        goto label33;
+
+     label32:
+        nop;
+        temp$42 := @caughtexception;
+        exitmonitor temp$7;
+        throw temp$42;
+
+     label33:
+        nop;
+        return;
+
+        catch java.lang.Throwable from label0 to label2 with label32;
+        catch java.lang.Throwable from label3 to label8 with label32;
+        catch java.lang.Throwable from label9 to label14 with label32;
+        catch java.lang.Throwable from label15 to label19 with label32;
+        catch java.lang.Throwable from label20 to label25 with label32;
+        catch java.lang.Throwable from label26 to label28 with label32;
+        catch java.lang.Throwable from label29 to label33 with label32;
+    }
+}

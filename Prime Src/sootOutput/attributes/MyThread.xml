@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<attributes>
+<attribute>
+<srcPos sline="0" eline="0" spos="0" epos="0"/>
+<jmpPos sline="17" eline="17" spos="0" epos="0"/>
+<text info="[flag]" aType="ParamNamesTag"/>
+</attribute>
+<attribute>
+<srcPos sline="0" eline="0" spos="0" epos="0"/>
+<jmpPos sline="29" eline="29" spos="0" epos="0"/>
+<text info="[]" aType="ParamNamesTag"/>
+</attribute>
+<attribute>
+<srcPos sline="595" eline="627" spos="3" epos="3"/>
+<jmpPos sline="279" eline="279" spos="0" epos="0"/>
+<text info="soot.tagkit.ThrowCreatedByCompilerTag@fdc12f2" aType="ThrowCreatedByCompilerTag"/>
+</attribute>
+</attributes>
